@@ -1,5 +1,12 @@
-#include<stdio.h>
-int stack[100],j,choice=0,n,top=-1;
+#include<stdioh>
+#include<stdlib.h>
+int choice=0,i,n;
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *top=0,*newnode,*temp;
 void push();
 void pop();
 void display();
@@ -31,44 +38,6 @@ void main(){
             default:
             printf("Invalid choice\n");
             printf("******************************************\n");
-        }
-    }
-}
-void push()
-{
-    int val;
-    if(top==n-1){
-        printf("OVERFLOW!\n");
-    }
-    else{
-        printf("\n Enter a number to push in to stack:");
-        scanf("%d",&val);
-        top=top+1;
-        stack[top]=val;
-        printf("The number %d is inserted in to the stack \n",val);
-    }
-}
-void pop()
-{
-    int i;
-    if(top==-1){
-        printf("UNDERFLOW!\n");
-    }
-    else{
-        i=stack[top];
-        top=top-1;
-        printf("The poped element is : %d\n",i);
-    }
-}
-void display()
-{
-    if(top==-1){
-        printf("There is no values in the stack to display \n");
-    }
-    else{
-        printf("\n The numbers in the stack are:\n");
-        for(j=top;j>=0;j--){
-            printf("%d\n",stack[j]);
         }
     }
 }
